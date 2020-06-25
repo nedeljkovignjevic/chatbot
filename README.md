@@ -7,7 +7,6 @@ Used neural network is fairly standard feed-forward neural network with 2 hidden
 
 - Inputs to the network are one hot encoded values of "bag of words" - bag of words because the order in<br />
 which the words appear in the sentence is lost, we only know the presence of words in the models vocabulary.<br />
-
 Each sentence is represented with a list the length of the amount of words in models vocabulary.<br />
 Each position in the list will represent a word from the vocabulary.<br/>
 If the position in the list is a 1 then that will mean that the word exists in input sentence, if it is a 0 then the word is nor present.<br/>
