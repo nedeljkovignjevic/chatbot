@@ -1,5 +1,6 @@
 import numpy as np
 
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch.utils.data import Dataset
@@ -23,6 +24,10 @@ class Model(nn.Module):
         x = self.fc3(x)
 
         return F.softmax(x, dim=-1)
+
+    def evaluate(self):
+        self.load_state_dict(torch.load('model/model.pth'))
+        self.eval()
 
 
 class ChatbotDataset(Dataset):

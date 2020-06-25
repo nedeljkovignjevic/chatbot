@@ -1,4 +1,4 @@
-from src.model import Model, ChatbotDataset
+from src.model import Model
 
 from nltk.stem.lancaster import LancasterStemmer
 from nltk import word_tokenize  # function pointer
@@ -8,54 +8,66 @@ import torch
 import random
 
 
-def get_bag(text: str, vocabulary: list):
-    """
-    Converting user input to a bag of words
-    """
-    stemmer = LancasterStemmer()
-    bag = [0 for _ in range(len(vocabulary))]
+class Bot(object):
 
-    # lower all words and take roots only
-    words = word_tokenize(text)
-    words = [stemmer.stem(w.lower()) for w in words]
+    def __init__(self, model: Model):
+        """
+        Chatbot that simulates human conversation through text chats
+        """
+        data = np.load('data/processed.npz', allow_pickle=True)
+        self.model = model
+        self.vocabulary = data['arr_2']
+        self.labels = data['arr_3']
+        self.data = data['arr_4'][0]
 
-    for word in words:
-        for i, word_vocabulary in enumerate(vocabulary):
-            if word_vocabulary == word:
-                bag[i] = 1
-
-    return np.array(bag)
-
-
-def main():
-
-    # Load data
-    data = np.load('data/processed.npz', allow_pickle=True)
-    words = data['arr_2']
-    labels = data['arr_3']
-    data = data['arr_4'][0]
-
-    # Prepare model for evaluation
-    data_set = ChatbotDataset()
-    model = Model(len(data_set.x[0]), len(data_set.y[0]))
-    model.load_state_dict(torch.load('model/model.pth'))
-    model.eval()
-
-    print("Start talking with the bot (type quit to stop)!")
-    while True:
-        inp = input("Say something: ")
-        if inp.lower() == "quit":
-            break
-
-        inp = get_bag(inp, words)
-        output = model(torch.from_numpy(inp).float())
+    def respond(self, message: str):
+        """
+        Returns respond to users message
+        """
+        inp = self.get_bag(message)
+        output = self.model(torch.from_numpy(inp).float())
         output = int(torch.argmax(output))
 
-        tag = labels[output]
+        tag = self.labels[output]
         responses = None
-        for t in data["intents"]:
+        for t in self.data["intents"]:
             if t['tag'] == tag:
                 responses = t['responses']
                 break
 
-        print(random.choice(responses))
+        return random.choice(responses)
+
+    def get_bag(self, text: str):
+        """
+        Converting users input to a bag of words
+        """
+        stemmer = LancasterStemmer()
+        bag = [0 for _ in range(len(self.vocabulary))]
+
+        # lower all words and take roots only
+        words = word_tokenize(text)
+        words = [stemmer.stem(w.lower()) for w in words]
+
+        for word in words:
+            for i, word_vocabulary in enumerate(self.vocabulary):
+                if word_vocabulary == word:
+                    bag[i] = 1
+
+        return np.array(bag)
+
+    def chat_loop(self):
+        """
+        Runs chat loop for console version of chatting
+        """
+        self.print_intro()
+        while True:
+            inp = input("You: ")
+            if inp.lower() == "quit":
+                break
+
+            response = self.respond(inp)
+            print("Tony: " + response)
+
+    @staticmethod
+    def print_intro():
+        print("Start talking with Tony (type quit to stop)!")
