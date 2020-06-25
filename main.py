@@ -3,7 +3,6 @@ from src.bot import Bot
 
 
 if __name__ == '__main__':
-
     # Used only to get input and output dimensions for model
     data_set = ChatbotDataset()
 
