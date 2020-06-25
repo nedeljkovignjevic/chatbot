@@ -1,2 +1,2 @@
 # chatbot
-Relatively simple chatbot that simulates human conversation through text chats.
+Relatively simple AI-based chatbot that simulates human conversation through text chats.
