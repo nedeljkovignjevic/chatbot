@@ -19,9 +19,9 @@ Each position in the list will represent one distinct label, a 1 in any of those
 ## Requirements
 You can use pip to install the following:
 ```
-- python 3
-- pytorch
-- numpy
-- nltk
+1. python 3
+2. pytorch
+3. numpy
+4. nltk
 ```
 <br /><br />
