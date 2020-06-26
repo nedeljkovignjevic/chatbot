@@ -3,6 +3,7 @@ from src.bot import Bot
 
 
 if __name__ == '__main__':
+
     # Used only to get input and output dimensions for model
     data_set = ChatbotDataset()
 
@@ -14,4 +15,10 @@ if __name__ == '__main__':
     bot = Bot(model)
 
     # Run chat loop
-    bot.chat_loop()
+    while True:
+        inp = input("You: ")
+        if inp.lower() == "q":
+            break
+
+        response = bot.respond(inp)
+        print("chatbot: " + response)

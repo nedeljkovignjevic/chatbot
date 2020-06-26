@@ -32,7 +32,7 @@ class Model(nn.Module):
 
 class ChatbotDataset(Dataset):
     """
-    Chat-bot data-set model
+    chatbot dataset model
     """
     def __init__(self):
         data = np.load('data/processed.npz')
