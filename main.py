@@ -1,9 +1,6 @@
 """
 MIT License
 
-chatbot is relatively simple AI-based software application that simulates human conversation through text chats.
-This file is part of chatbot.
-
 Copyright (c) 2020 Nedeljko Vignjević
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
