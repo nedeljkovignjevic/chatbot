@@ -14,18 +14,14 @@ copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 """
 
-from src.model import Model, ChatbotDataset
 from src.bot import Bot
+from src.model import Model, keras   # function pointer
 
 
 if __name__ == '__main__':
 
-    # Used only to get input and output dimensions for model
-    data_set = ChatbotDataset()
-
-    # Prepare neural network model for evaluation
-    model = Model(len(data_set.x[0]), len(data_set.y[0]))
-    model.evaluate()
+    # Load neural network model
+    model = keras.models.load_model('model/model.h5')
 
     # Create bot
     bot = Bot(model)

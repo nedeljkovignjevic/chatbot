@@ -14,19 +14,16 @@ copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
 """
 
-from src.model import Model
-
 from nltk.stem.lancaster import LancasterStemmer
 from nltk import word_tokenize  # function pointer
 
 import numpy as np
-import torch
 import random
 
 
 class Bot(object):
 
-    def __init__(self, model: Model):
+    def __init__(self, model):
         data = np.load('data/processed.npz', allow_pickle=True)
         self.model = model
         self.vocabulary = data['arr_2']
@@ -37,13 +34,13 @@ class Bot(object):
         """
         Returns respond to users message
         """
-        inp = self.get_bag(message)
-        output = self.model(torch.from_numpy(inp).float())
-        output_index = int(torch.argmax(output))
+        inp = np.array([self.get_bag(message)])
 
-        # Need to add this when i upgrade the model
-        # if output[output_index] < 0.7:
-        #    return "Try again buddy. I really need some upgrades, can't understand you on this one."
+        output = self.model.predict(inp)[0]
+        output_index = int(np.argmax(output))
+
+        if output[output_index] < 0.7:
+            return "Try again buddy. I really need some upgrades, can't understand you on this one."
 
         tag = self.labels[output_index]
         responses = None

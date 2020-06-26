@@ -15,48 +15,37 @@ furnished to do so, subject to the following conditions:
 """
 
 import numpy as np
-
-import torch
-import torch.nn as nn
-import torch.nn.functional as F
-from torch.utils.data import Dataset
+from tensorflow import keras
 
 
-class Model(nn.Module):
+class Model(keras.Model):
 
-    def __init__(self, input_dims, output_dims):
-        """
-        Fully connected neural network model
-        """
-        super(Model, self).__init__()
-
-        self.fc1 = nn.Linear(input_dims, 8)
-        self.fc2 = nn.Linear(8, 8)
-        self.fc3 = nn.Linear(8, output_dims)
-
-    def forward(self, x):
-        x = F.relu(self.fc1(x))
-        x = F.relu(self.fc2(x))
-        x = self.fc3(x)
-
-        return F.softmax(x, dim=-1)
-
-    def evaluate(self):
-        self.load_state_dict(torch.load('model/model.pth'))
-        self.eval()
-
-
-class ChatbotDataset(Dataset):
-    """
-    chatbot dataset model
-    """
     def __init__(self):
         data = np.load('data/processed.npz')
-        self.x = data['arr_0']
-        self.y = data['arr_1']
+        self.input = data['arr_0']
+        self.output = data['arr_1']
 
-    def __len__(self):
-        return self.x.shape[0]
+        self.fc1 = keras.Input(shape=(len(self.input[0]),))
+        self.fc2 = keras.layers.Dense(4, activation="linear")
+        self.fc3 = keras.layers.Dense(4, activation="linear")
+        self.fc4 = keras.layers.Dense(len(self.output[0]), activation='softmax')
 
-    def __getitem__(self, index):
-        return self.x[index], self.y[index]
+    def call(self, x):
+        x = self.fc1(x)
+        x = self.fc2(x)
+        x = self.fc3(x)
+        x = self.fc4(x)
+        return x
+
+    def train_model(self):
+        """
+        Build and save the model
+        """
+        self.compile(loss='categorical_crossentropy',
+                     optimizer='adam',
+                     metrics=['accuracy'])
+
+        self.fit(self.input, self.output,
+                 batch_size=8, epochs=500, verbose=1)
+
+        self.save('model/model.h5')
