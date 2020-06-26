@@ -1,6 +1,5 @@
 # chatbot
-Relatively simple AI-based chatbot that simulates human conversation through text chats. <br/>
-His name is Tony and he is the new meme lord. Elon is retiring :D
+Relatively simple AI-based chatbot that simulates human conversation through text chats.
 
 ## Neural network architecture
 Used neural network is fairly standard feed-forward neural network with 2 hidden layers per 8 neurons.<br />
