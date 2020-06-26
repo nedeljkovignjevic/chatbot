@@ -2,7 +2,7 @@
 Relatively simple AI-based chatbot that simulates human conversation through text chats.
 
 ## Neural network architecture
-Used neural network is fairly standard feed-forward neural network with 2 hidden layers per 8 neurons.<br />
+Neural network model is fairly standard feed-forward neural network model with 2 hidden layers per 8 neurons.<br />
 
 - Inputs to the network are one hot encoded values of "bag of words" - bag of words because the order in<br />
 which the words appear in the sentence is lost, we only know the presence of words in the models vocabulary.<br />
