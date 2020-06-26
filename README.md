@@ -1,6 +1,10 @@
 # chatbot
 Relatively simple AI-based chatbot that simulates human conversation through text chats.
 
+#### Chat example<br />
+![fotka](https://user-images.githubusercontent.com/54076398/85853585-0e969500-b7b3-11ea-92ee-d193637dd0df.jpg)
+<br /><br />
+
 ## Neural network architecture
 Neural network model is fairly standard feed-forward neural network model with 2 hidden layers per 8 neurons.<br />
 
