@@ -10,8 +10,10 @@ Each sentence is represented with a list the length of the amount of words in mo
 Each position in the list will represent a word from the vocabulary.<br/>
 If the position in the list is a 1 then that will mean that the word exists in input sentence, if it is a 0 then the word is nor present.<br/>
 
-- Similarly to a bag of words output lists which are the length of the amount of labels we have in our dataset.<br /> 
-Each position in the list will represent one distinct label, a 1 in any of those positions will show which label is represented.
+- Similarly to a bag of words on output of neural network we have lists which are the length of <br /> 
+the amount of labels we have in our dataset.<br /> 
+Each position in the list will represent one distinct label, a 1 in any of those positions will show which label is represented.<br />
+Labels: **greeting**, **goodbye**, **basic**, **thanks**, **meme**
 <br/><br/>
 
 ## Requirements
