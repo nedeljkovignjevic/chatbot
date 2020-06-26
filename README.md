@@ -20,7 +20,7 @@ Each position in the list will represent one distinct label, a 1 in any of those
 Labels: **greeting**, **goodbye**, **basic**, **thanks**, **meme**
 <br/><br/>
 
-## Requirements
+### Requirements
 You can use pip to install the following:
 ```
 1. python 3
@@ -29,3 +29,9 @@ You can use pip to install the following:
 4. nltk
 ```
 <br /><br />
+
+## License
+chatbot is released under the MIT license.<br />
+A short and simple permissive license with conditions only requiring preservation of copyright and license notices.<br />
+Licensed works, modifications, and larger works may be distributed under different terms and without source code.<br />
+You can find a copy of the license in the repository.
