@@ -31,7 +31,6 @@ You can use pip to install the following:
 <br /><br />
 
 ## License
-chatbot is released under the MIT license.<br />
-A short and simple permissive license with conditions only requiring preservation of copyright and license notices.<br />
-Licensed works, modifications, and larger works may be distributed under different terms and without source code.<br />
-You can find a copy of the license in the repository.
+chatbot is released under the **Apache License, Version 2.0** (the "License");<br />
+you may not use this file except in compliance with the License.<br />
+You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
