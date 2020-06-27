@@ -31,7 +31,8 @@ You can use pip to install the following:
 <br />
 
 ## Usage 
-Most common use case for this type of chatbot is answering frequently asked questions that visitors on some website may have.<br />
+Most common use case for this type of chatbot is answering frequently asked questions<br />
+that visitors on some website may have.<br />
 I'm using it mostly for fun as meme generator :D
 <br /><br />
 
