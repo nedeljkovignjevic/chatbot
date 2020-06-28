@@ -28,6 +28,12 @@ You can use pip to install the following:
 3. numpy
 4. nltk
 ```
+<br />
+
+## Usage 
+Most common use case for this type of chatbot is answering frequently asked questions<br />
+that visitors on some website may have.<br />
+I'm using it mostly for fun as meme generator :D
 <br /><br />
 
 ## License
