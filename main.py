@@ -15,7 +15,7 @@ limitations under the License.
 """
 
 from src.bot import Bot
-from src.model import Model, keras   # function pointer
+from tensorflow import keras
 
 
 if __name__ == '__main__':

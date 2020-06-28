@@ -32,7 +32,7 @@ class Bot(object):
 
     def respond(self, message: str):
         """
-        Returns respond to users message
+        Return respond to users message
         """
         inp = np.array([self.get_bag(message)])
 
@@ -53,7 +53,7 @@ class Bot(object):
 
     def get_bag(self, text: str):
         """
-        Converting users input to a bag of words
+        Convert users input to a bag of words
         """
         stemmer = LancasterStemmer()
         bag = [0 for _ in range(len(self.vocabulary))]

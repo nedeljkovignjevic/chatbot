@@ -39,7 +39,7 @@ class Model(keras.Model):
 
     def train_model(self):
         """
-        Build and save the model
+        Build, train and save the model
         """
         self.compile(loss='categorical_crossentropy',
                      optimizer='adam',
