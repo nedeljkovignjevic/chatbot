@@ -1,7 +1,6 @@
 # chatbot
 Relatively simple AI-based chatbot that simulates human conversation through text chats.<br />
-Most common use case for this type of chatbot is answering frequently asked questions (FAQ). Also it can be used for fun.<br />
-
+Most common use case for this type of chatbot is answering frequently asked questions. Also it can be used for fun.<br />
 
 #### Chat example<br />
 ![fotka](https://user-images.githubusercontent.com/54076398/85853585-0e969500-b7b3-11ea-92ee-d193637dd0df.jpg)
