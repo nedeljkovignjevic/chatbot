@@ -26,7 +26,7 @@ Labels: **greeting**, **goodbye**, **basic**, **thanks**, **meme**
 You can use pip to install the following:
 ```
 1. python 3
-2. pytorch
+2. tensorflow
 3. numpy
 4. nltk
 ```
