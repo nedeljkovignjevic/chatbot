@@ -1,6 +1,6 @@
 # chatbot
 Relatively simple AI-based chatbot that simulates human conversation through text chats.<br />
-Most common use case for this type of chatbot is answering frequently asked questions that visitors on some website may have.
+Most common use case for this type of chatbot is answering frequently asked questions. Also it can be used for fun.<br />
 
 
 #### Chat example<br />
