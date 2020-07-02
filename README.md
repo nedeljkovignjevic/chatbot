@@ -3,7 +3,7 @@ Relatively simple AI-based chatbot that simulates human conversation through tex
 Most common use case for this type of chatbot is answering frequently asked questions. Also it can be used for fun.<br />
 
 #### Chat example<br />
-![fotka](https://user-images.githubusercontent.com/54076398/85853585-0e969500-b7b3-11ea-92ee-d193637dd0df.jpg)
+![moze](https://user-images.githubusercontent.com/54076398/86357054-8c541800-bc6d-11ea-9aad-58f67d33c117.jpg)
 <br /><br />
 
 ## Neural network architecture
