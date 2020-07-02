@@ -1,2 +1,4 @@
 .idea/
 __pycache__/
+token.txt
+data/data.json

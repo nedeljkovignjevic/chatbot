@@ -20,7 +20,9 @@ from src.bot import Bot
 from tensorflow import keras
 
 
+# Global variables
 BOT = None
+TOKEN = 'NzI4MDIwNDU3OTc4MjAwMDk1.Xv0oNg.zVbZRCsQbuVG_25YXNX2i8OUGWw'   # DO NOT USE :D
 client = discord.Client()
 
 
@@ -47,4 +49,4 @@ if __name__ == '__main__':
     BOT = Bot(model)
 
     # Run bot on discord
-    client.run('NzI4MDIwNDU3OTc4MjAwMDk1.Xv0oNg.zVbZRCsQbuVG_25YXNX2i8OUGWw')
+    client.run(TOKEN)
