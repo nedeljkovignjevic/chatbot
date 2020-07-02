@@ -32,14 +32,14 @@ class Bot(object):
 
     def respond(self, message: str):
         """
-        Return respond to users message
+        Return respond to user's message
         """
         inp = np.array([self.get_bag(message)])
 
         output = self.model.predict(inp)[0]
         output_index = int(np.argmax(output))
 
-        if output[output_index] < 0.7:
+        if output[output_index] < 0.5:
             return "Try again buddy. I really need some upgrades, can't understand you on this one."
 
         tag = self.labels[output_index]
@@ -53,7 +53,7 @@ class Bot(object):
 
     def get_bag(self, text: str):
         """
-        Convert users input to a bag of words
+        Convert input message to a bag of words
         """
         stemmer = LancasterStemmer()
         bag = [0 for _ in range(len(self.vocabulary))]

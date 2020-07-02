@@ -14,8 +14,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 """
 
+import discord
+
 from src.bot import Bot
 from tensorflow import keras
+
+
+client = discord.Client()
+
+
+@client.event
+async def on_ready():
+    print('chatbot is ready.'.format(client))
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    await message.channel.send(bot.respond(message.content))
 
 
 if __name__ == '__main__':
@@ -26,11 +44,5 @@ if __name__ == '__main__':
     # Create bot
     bot = Bot(model)
 
-    # Run chat loop
-    while True:
-        inp = input("You: ")
-        if inp.lower() == "q":
-            break
-
-        response = bot.respond(inp)
-        print("chatbot: " + response)
+    # Run client
+    client.run('NzI4MDIwNDU3OTc4MjAwMDk1.Xv0oNg.zVbZRCsQbuVG_25YXNX2i8OUGWw')

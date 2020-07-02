@@ -21,21 +21,21 @@ from tensorflow import keras
 class Model(keras.Model):
 
     def __init__(self):
+        super(Model, self).__init__()
         data = np.load('data/processed.npz')
-        self.input = data['arr_0']
-        self.output = data['arr_1']
+        self.inp = data['arr_0']
+        self.out = data['arr_1']
 
-        self.fc1 = keras.Input(shape=(len(self.input[0]),))
+        self.fc1 = keras.Input(shape=(len(self.inp[0]),))
         self.fc2 = keras.layers.Dense(4, activation="linear")
         self.fc3 = keras.layers.Dense(4, activation="linear")
-        self.fc4 = keras.layers.Dense(len(self.output[0]), activation='softmax')
+        self.fc4 = keras.layers.Dense(len(self.out[0]), activation='softmax')
 
     def call(self, x):
         x = self.fc1(x)
         x = self.fc2(x)
         x = self.fc3(x)
-        x = self.fc4(x)
-        return x
+        return self.fc4(x)
 
     def train_model(self):
         """
@@ -45,7 +45,7 @@ class Model(keras.Model):
                      optimizer='adam',
                      metrics=['accuracy'])
 
-        self.fit(self.input, self.output,
+        self.fit(self.inp, self.out,
                  batch_size=8, epochs=500, verbose=1)
 
-        self.save('model/model.h5')
+        self.save('model/model_new.h5')

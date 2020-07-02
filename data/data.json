@@ -5,12 +5,12 @@
         },
         {"tag": "goodbye",
          "patterns": ["Bye", "See you later", "Goodbye", "Fuck off", "cya"],
-         "responses": ["See you later, thanks for visiting", "cya!", "Bye! Come back again soon."]
+         "responses": ["See you later, thanks for visiting.", "cya!", "Bye! Come back again soon."]
         },
         {"tag": "basic",
-         "patterns": ["What's up?", "What are you doing?", "What are you?", "Who are you?", ""],
+         "patterns": ["What's up?", "What are you doing?", "What are you?", "Who are you?"],
          "responses": ["Doing memes here. Busy...", "Honestly, I'm the one who did everything for the memes.",
-                      "I'm meme lord of this shit.", "Apparently, there is this thing called 'Dad jokes' and I make them"]
+                      "I'm meme lord of this shit.", "Apparently, there is this thing called 'Dad jokes' and I make them."]
         },
         {"tag": "thanks",
          "patterns": ["Thanks", "Thank you", "That's helpful", "Nice", "You are the best"],
@@ -18,11 +18,14 @@
         },
         {"tag": "meme",
          "patterns": ["Tell me a joke", "I want to see some memes", "Make me laugh", "Jokes?"],
-         "responses": ["If mine space company establishes a Mars colony, and you have a girlfriend on mars but later break up because of long distance, she'd be your...\nSpace x.",
-                      "Why couldnt Elon Musk lift the box?\nIt was too falcon heavy xD",
-                      "What's Elon Musk's favorite meal of the day?\nLaunch xD",
-                      "Why can't orphans play baseball? They don't know where home is.",
-                      "What is Iron Man's least favorite operating system?\nThanOS."]
+         "responses": ["If Elon's space company establishes a Mars colony, and you have a girlfriend on mars but later break up because of long distance, she'd be your... Space x :D.",
+                      "Why couldnt Elon Musk lift the box? It was too falcon heavy xD.",
+                      "What's Elon Musk's favorite meal of the day? Launch xD.",
+                      "What is Iron Man's least favorite operating system? ThanOS. xD",
+                      "If life is a video game, the graphics are great, but the plot is confusing & the tutorial is way too long.",
+                      "Not a meme but i will say it. A ceiling is simply a floor from bellow.",
+                      "There is a race between a Jew , a German and a Nigger, Who wins? The German cause he burned them at the line."
+                      ]
         }
    ]
 }
