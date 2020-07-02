@@ -1,12 +1,14 @@
 # chatbot
-Relatively simple AI-based chatbot that simulates human conversation through text chats.
+Relatively simple AI-based chatbot that simulates human conversation through text chats.<br />
+Most common use case for this type of chatbot is answering frequently asked questions that visitors on some website may have.
+
 
 #### Chat example<br />
 ![fotka](https://user-images.githubusercontent.com/54076398/85853585-0e969500-b7b3-11ea-92ee-d193637dd0df.jpg)
 <br /><br />
 
 ## Neural network architecture
-Neural network model is fairly standard feed-forward neural network model with 2 hidden layers per 8 neurons.<br />
+Neural network model is fairly standard feed-forward neural network model with 2 hidden layers per 4 neurons.<br />
 
 - Inputs to the network are one hot encoded values of "bag of words" - bag of words because the order in<br />
 which the words appear in the sentence is lost, we only know the presence of words in the models vocabulary.<br />
@@ -29,12 +31,6 @@ You can use pip to install the following:
 4. nltk
 ```
 <br />
-
-## Usage 
-Most common use case for this type of chatbot is answering frequently asked questions<br />
-that visitors on some website may have.<br />
-I'm using it mostly for fun as meme generator :D
-<br /><br />
 
 ## License
 chatbot is released under the **Apache License, Version 2.0** (the "License");<br />
