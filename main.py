@@ -20,6 +20,7 @@ from src.bot import Bot
 from tensorflow import keras
 
 
+BOT = None
 client = discord.Client()
 
 
@@ -33,7 +34,8 @@ async def on_message(message):
     if message.author == client.user:
         return
 
-    await message.channel.send(bot.respond(message.content))
+    response = BOT.respond(message.content)
+    await message.channel.send(response)
 
 
 if __name__ == '__main__':
@@ -42,7 +44,7 @@ if __name__ == '__main__':
     model = keras.models.load_model('model/model.h5')
 
     # Create bot
-    bot = Bot(model)
+    BOT = Bot(model)
 
-    # Run client
+    # Run bot on discord
     client.run('NzI4MDIwNDU3OTc4MjAwMDk1.Xv0oNg.zVbZRCsQbuVG_25YXNX2i8OUGWw')
